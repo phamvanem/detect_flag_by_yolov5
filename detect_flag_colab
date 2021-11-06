@@ -1,0 +1,11 @@
+from google.colab import drive
+drive.mount('/content/gdrive')
+
+%cd /content/drive/MyDrive/Random_10_times/Lan1
+!git clone https://github.com/ultralytics/yolov5 
+
+%cd /content/drive/MyDrive/Random_10_times/Lan1/yolov5/
+!pip install -r requirements.txt
+
+%cd /content/drive/MyDrive/Random_5_times/Lan4/yolov5
+!python train.py --img 640 --batch 20 --epochs 20 --data models/data.yaml --weights yolov5x.pt 
